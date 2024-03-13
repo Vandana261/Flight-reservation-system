@@ -1,0 +1,52 @@
+<div class="w-full">
+  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="from-location">
+        From
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="from-location" type="text" placeholder="Enter your source airport (example: BOM for Mumbai)">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="to-location">
+        To
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="to-location" type="text" placeholder="Enter your destination airport (example: MAA for Chennai)">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="departure-date">
+        Departure Date
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="departure-date" type="date" placeholder="Enter your destination airport">
+    </div>
+<!--     <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="return-date">
+        Return Date
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="return-date" type="date" placeholder="Enter your destination airport">
+    </div> -->
+
+    <div class="flex items-center justify-between">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" (click)="searchFlights()">
+        Search
+      </button>
+    </div>
+  </form>
+<!--   <div class="w-full bg-red-300 shadow-md rounded px-8 pt-6 pb-8 mb-4" #searchResults>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, dolore, tenetur porro maxime excepturi deleniti architecto modi provident omnis velit numquam. Ab voluptas non dolore dicta repellendus dolorum ea. Fugiat.
+  </div> -->
+
+  <div class="container mx-auto py-8">
+    <h1 class="text-2xl font-bold mb-4" *ngIf="finalSearchResults.length">Flight Search Results</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <app-search-result *ngFor="let searchResult of finalSearchResults; let i = index" [flightOption]="searchResult"></app-search-result>
+    </div>
+
+  </div>
+
+  <div class="bg-white p-8 rounded shadow-md" *ngIf="noResultsFlag">
+      <h2 class="text-2xl font-bold mb-4 text-red-700">No Results Found</h2>
+      <p class="text-red-400">Sorry, there are no results available at the moment.</p>
+  </div>
+
+</div>

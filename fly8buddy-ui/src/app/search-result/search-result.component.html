@@ -1,0 +1,18 @@
+      <!-- Flight result card 1 -->
+      <div class="bg-white p-4 shadow-md rounded-lg">
+
+        <div id="flightDetails">
+
+        <h2 class="text-lg font-bold mb-2">Flight #{{flightOption?.Id}}</h2>
+        <p class="text-gray-600">Airlines: {{flightOption?.Airline}}</p>
+        <p class="text-gray-600">Departure: {{flightOption?.FromAirport}}</p>
+        <p class="text-gray-600">Arrival: {{flightOption?.ToAirport}}</p>
+        <p class="text-gray-600">Departure Time: {{flightOption?.DepartureTime}}</p>
+        <p class="text-gray-600">Arrival Time: {{flightOption?.ArrivalTime}}</p>
+        <p class="text-gray-800 font-semibold mt-4">INR {{flightOption?.FlightPrice}}</p>
+
+        </div>
+        <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4" (click)="generateTicket()">Book & Download</button>
+<!--         <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4" (click)="generateTicket()">Download Ticket</button> -->
+      </div>
+

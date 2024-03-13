@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/bcfdadf2-3b9d-4682-8cc2-fd9923f7337e/resourceGroups/fly8-buddy-rg/providers/Microsoft.Web/sites/vj-fly8buddy",
+    "appService.deploySubpath": "fly8buddy-ui\\dist\\fly8buddy-ui"
+}
